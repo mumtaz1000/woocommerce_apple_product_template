@@ -1,0 +1,181 @@
+*,
+*::befor,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+:root {
+  /* Fonts */
+  --ff-primary: "Source Sans Pro", sans-serif;
+  --ff-secondary: "Source Code Pro", monospace;
+  /* Font weight */
+  --fw-reg: 300;
+  --fw-bold: 900;
+
+  --clr-light: #fff;
+  --clr-dark: #303030;
+  --clr-accent: #0077ed;
+
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+    0.125em 0.125em 0.125em rgba(0, 0, 0, 0.9);
+}
+@media (min-width: 800px) {
+  :root {
+    --fs-h1: 4.5rem;
+    --fs-h2: 3.75rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.125rem;
+  }
+}
+
+/* General styles */
+.product-card-body,
+.single-product-body {
+  background: var(--clr-light);
+  color: var(--clr-dark);
+  margin: 0;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+}
+
+section {
+  padding: 5em 2em;
+}
+
+strong {
+  font-weight: var(--fw-bold);
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  line-height: 1;
+  margin: 0;
+}
+h1 {
+  font-size: var(--fs-h1);
+}
+h2 {
+  font-size: var(--fs-h2);
+}
+h3 {
+  font-size: var(--fs-h3);
+}
+
+/* This is whole container  containing all cards
+I use flexbox to make it responsive and to adjust 
+all cards according to screen size
+*/
+#product-card-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+.product-card-container {
+  position: relative;
+  width: 1150px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.product-card-container .card {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  background: #fff;
+  margin: 5px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.product-card-container .card .circle {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  background-image: url("football.png");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: contain; /* Resize the background image to cover the entire container */
+}
+
+.product-card-container .card .circle h2 {
+  color: #fff;
+  font-size: 4.5em;
+  padding: 30px 0;
+}
+
+.product-card-container .card .content {
+  box-sizing: border-box;
+  min-width: 100%;
+  position: absolute;
+  bottom: 10px;
+  padding: 5px;
+  text-align: center;
+  align-items: center;
+}
+
+.product-card-container .card .content p {
+  color: #666;
+}
+
+.product-card-container .card .content a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--clr-accent);
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  margin-top: 20px;
+  font-weight: var(--fw-bold);
+}
+
+.product-container-grid {
+  display: grid;
+  grid-template-areas: "Product-Image Product-Info";
+  grid-template-columns: 1fr 1fr;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: 5px;
+  width: 100%;
+}
+
+.item1 {
+  grid-area: Product-Image;
+  width: 100%;
+  background-image: url("iphone13.jpg");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: contain; /* Resize the background image to cover the entire container */
+}
+.item2 {
+  grid-area: Product-Info;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.product-model-div {
+  border: var(--clr-dark) 1px solid;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.dot {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+}
